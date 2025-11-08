@@ -1,0 +1,89 @@
+/* ===== General Styles ===== */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f0f0f0;
+}
+
+section {
+  margin: 2rem 0;
+}
+
+/* ===== Part 1: CSS Transitions and Animations ===== */
+
+/* Button Hover Animation */
+.animated-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.animated-btn:hover {
+  transform: scale(1.1);
+  background-color: #2ecc71;
+}
+
+/* Box Animation */
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 1rem auto;
+  background-color: #e74c3c;
+  transition: transform 0.6s ease, background-color 0.6s ease;
+}
+
+/* Box animate class toggled by JS */
+.box.animate {
+  transform: translateX(200px) rotate(360deg);
+  background-color: #9b59b6;
+}
+
+/* Card Flip Animation */
+.card {
+  width: 150px;
+  height: 150px;
+  margin: 1rem auto;
+  perspective: 1000px;
+}
+
+.card > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.front {
+  background-color: #1abc9c;
+}
+
+.back {
+  background-color: #f39c12;
+  transform: rotateY(180deg);
+}
+
+.card.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(0deg);
+}
+
+.card, .card > div {
+  transition: transform 0.6s;
+}
